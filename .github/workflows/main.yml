@@ -1,0 +1,21 @@
+name: Deploy Website with Surge
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Job_Deploy_Surge
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+      - name: setup Surge
+        run: npm install --global Surge
+      - name: Execute Development with Surge
+        run: surge ./ bootcapm-lectures.surge.sh/ --token ${{ secrets.BOOTCAMPC1_surge_token }}
