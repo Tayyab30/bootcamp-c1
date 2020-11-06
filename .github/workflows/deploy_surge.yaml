@@ -18,4 +18,4 @@ jobs:
       - name: setup Surge
         run: npm install --global Surge
       - name: Execute Development with Surge
-        run: surge ./ bootcapm-lectures.surge.sh/ --token ${{ secrets.bootcapm_surge_token }}
+        run: surge ./ bootcapm-lectures.surge.sh/ --token ${{ secrets.BOOTCAMPC1_surge_token }}
